@@ -1,5 +1,10 @@
 <?php
 
+$host = 'us-cdbr-iron-east-01.cleardb.net';
+$username = 'b1411b61e7b654';
+$password = 'bb1c8af4';
+$database = 'heroku_3f0782a2f6cd942';
+
 return array(
 
 	/*
@@ -54,10 +59,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+			'host'      => $host,
+			'database'  => $database,
+			'username'  => $username,
+			'password'  => $password,
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
