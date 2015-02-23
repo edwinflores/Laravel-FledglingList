@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return User::all();
-});
+Route::get('/', 'TasksController@index');
+Route::get('/add_task', 'TasksController@add_task');
+Route::get('/edit', 'TasksController@edit');
+Route::get('/delete', 'TasksController@delete');

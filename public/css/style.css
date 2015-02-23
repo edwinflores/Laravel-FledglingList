@@ -1,0 +1,215 @@
+.body {
+    font-size: 14px;
+    background: #F2F4F5;
+}
+
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: 50% 50% no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar {
+    border-radius: 0;
+    position: fixed;
+    width: 100%;
+    padding: 0 25px;
+    z-index: 100;
+}
+
+.jumbotron {
+    padding: 0;
+    margin: 0;
+    color: #777777;
+    background: #F2F4F5;
+}
+
+.jumbotron h1 {
+    color: #FA5950;
+    font-size: 27px;
+}
+
+.section-padding {
+    padding-top: 250px;
+}
+
+.grey {
+    color: #777777;
+}
+
+.showcase-box {
+    height: 50%;
+    padding: 10px;
+}
+
+.showcase-item img {
+    color: #777777;
+    padding: 40px;
+    height: 50%;
+    width: 50%;
+}
+
+.bottom-menu {
+    background: #e2e2e2;
+    color: #bcc3ca;
+    padding: 15px 0 20px;
+    margin: 50px 0 0 0;
+}
+
+.bottom-menu .navbar-brand {
+    font-size: 20px;
+    padding: 0;
+}
+
+.bottom-menu .title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.bottom-menu a {
+    color: inherit;
+}
+
+.active .bottom-menu a,
+.bottom-menu a:hover,
+.bottom-menu a:focus {
+    color: firebrick;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .jumbotron h1 {
+        font-size: 20px;
+    }
+
+    .header-text {
+        color: #FA5950;
+    }
+
+    .bottom-menu .navbar-brand,
+    .bottom-menu .bottom-links {
+        margin-bottom: 10px;
+    }
+
+    .bottom-menu .navbar-brand {
+        padding: 10px;
+        float: none;
+    }
+}
+
+.task_button_pending {
+    background: deepskyblue;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    text-indent: 15px;
+    font-size: 18px;
+    transition-property: background;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    width: 75%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task_button_pending:hover {
+    background: royalblue;
+}
+
+.task_button_done {
+    background: seagreen;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    text-indent: 15px;
+    font-size: 18px;
+    transition-property: background;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    width: 75%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task_button_done:hover {
+    background: darkgreen;
+}
+
+.task_button_overdue {
+    background: orangered;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    text-indent: 15px;
+    font-size: 18px;
+    transition-property: background;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    width: 75%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task_button_overdue:hover {
+    background: red;
+}
+
+.edit_button {
+    float: right;
+    background: #000000;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    transition-property: background, border-radius;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    width: 30px;
+    margin-top: 5px;
+    margin-right: 55px;
+}
+
+.edit_button:hover {
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.delete_button {
+    float: right;
+    background: #000000;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    transition-property: background, border-radius;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    width: 30px;
+    margin-top: 5px;
+    margin-right: -75px;
+}
+
+.delete_button:hover {
+    background: #ffffff;
+    border-radius: 50%;
+}
