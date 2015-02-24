@@ -213,3 +213,159 @@
     background: #ffffff;
     border-radius: 50%;
 }
+
+.truncate {
+    color: #ffffff;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow:
+        3px 3px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+<!-- Circle Button -->
+    .crc_btn_container {
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 0 4px 1px white;
+        width: 400px;
+        height: 400px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .crc_btn_wrap {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin:10px auto 15px auto;
+    }
+
+    .crc_btn_clicker {
+        background-color: #ffffff;
+        outline: none;
+        font-weight: 600;
+            position: absolute;
+        cursor:pointer;
+        padding: 0;
+            border: none;
+            height: 64px;
+            width: 64px;
+        left: 8px;
+        top: 8px;
+            border-radius: 100px;
+            z-index: 2;
+    }
+
+    .crc_btn_clicker:active {
+        transform: translate(0, 1px);
+        height: 63px;
+        box-shadow: 0px 1px 0 0 rgb(190, 190, 190) inset;
+    }
+
+    .crc_btn_circle {
+        position: relative;
+        border-radius: 40px;
+        width: 80px;
+        height: 80px;
+        z-index: 1;
+    }
+
+    .crc_btn_circle.third {
+        border-radius: 0;
+    }
+
+    .crc_btn_clicker.faster:hover + .crc_btn_circle,
+    .crc_btn_clicker.faster:active + .crc_btn_circle {
+        -webkit-animation: rotator linear .4s infinite;
+        -moz-animation: rotator linear .4s infinite;
+        -o-animation: rotator linear .4s infinite;
+        animation: rotator linear .4s infinite;
+    }
+
+    .crc_btn_clicker.fast:hover + .crc_btn_circle,
+    .crc_btn_clicker.fast:active + .crc_btn_circle {
+        -webkit-animation: rotator linear .4s infinite;
+        -moz-animation: rotator linear .4s infinite;
+        -o-animation: rotator linear .4s infinite;
+        animation: rotator linear .5s
+        infinite;
+    }
+
+    .crc_btn_clicker:hover + .crc_btn_circle,
+    .crc_btn_clicker:active + .crc_btn_circle {
+        -webkit-animation: rotator linear .4s infinite;
+        -moz-animation: rotator linear .4s infinite;
+        -o-animation: rotator linear .4s infinite;
+        animation: rotator linear .8s
+        infinite;
+    }
+
+    @-webkit-keyframes rotator {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    @-moz-keyframes rotator {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    @-o-keyframes rotator {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    @keyframes rotator {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .crc_btn_angled {
+        background-image: linear-gradient(45deg,
+                                                white 0%,
+                                                white 30%,
+                                                rgb(20, 190, 235) 30%,
+                                                rgb(20, 190, 235) 70%,
+                                                white 70%,
+                                                white 100%
+        );
+    }
+
+    .crc_btn_angled.second {
+        background-image: linear-gradient(45deg,
+                                                white 0%,
+                                                white 30%,
+                                                rgb(250, 160, 120) 30%,
+                                                rgb(250, 160, 120) 70%,
+                                                white 70%,
+                                                white 100%
+        );
+    }
+
+    .crc_btn_angled.third {
+        background-image: linear-gradient(45deg,
+                                                white 0%,
+                                                white 30%,
+                                                rgb(130, 230, 135) 30%,
+                                                rgb(130, 230, 135) 70%,
+                                                white 70%,
+                                                white 100%
+        );
+    }
+<!-- Circle Button End -->
+
+/* Centered Column Styles */
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}

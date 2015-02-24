@@ -10,9 +10,16 @@
     </section>
     <section class="task_index">
         <div class="container">
-            @foreach($tasks as $task)
-                @include('task-element', compact($task))
-            @endforeach
+            @include('task_form')
+        </div>
+        <div class="container">
+            @if(!empty($tasks))
+                @foreach($tasks as $task)
+                    @include('task-element', compact($task))
+                @endforeach
+            @else
+                <h2 class="bg-warning" style="text-align: center">No tasks at the moment~</h2>
+            @endif
         </div>
     </section>
 @stop

@@ -22,7 +22,7 @@ class Task
 
     public static function GetAll()
     {
-        return DB::select('SELECT * FROM tasks ORDER BY status DESC');
+        return DB::select('SELECT * FROM tasks WHERE user_id = ? ORDER BY status DESC', [Auth::user()->id]);
     }
 }
 

@@ -1,26 +1,32 @@
 <?php
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Auth\Reminders\RemindableInterface;
+class User
+{
+    public $email;
+    public $password;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+    public function Authenticate()
+    {
+        if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
+            $row = DB::select('SELECT * FROM users WHERE BINARY email = ?', [$this->email]);
+            return $row[0];
+        } else {
+            throw new Exception('Invalid login credentials');
+        }
+    }
 
-	use UserTrait, RemindableTrait;
+    public function Register()
+    {
+        if ($this->getByEmailAddress()) {
+            throw new Exception('Email already registered');
+        }
+        $pass = Hash::make($this->password);
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
+        DB::insert("INSERT INTO users (email, password)  VALUES (? , ?)", [$this->email, $pass]);
+    }
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = array('password', 'remember_token');
-
+    public function GetByEmailAddress()
+    {
+        return DB::select('SELECT * FROM users WHERE BINARY email = ?', [$this->email]);
+    }
 }
