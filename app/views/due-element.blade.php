@@ -1,0 +1,1 @@
+<label class="due-label">{{ $task->due_date }}</label>

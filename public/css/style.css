@@ -108,7 +108,6 @@
 .task_button_pending {
     background: deepskyblue;
     border-radius: 6px;
-    cursor: pointer;
     height: 40px;
     line-height: 40px;
     text-align: left;
@@ -117,7 +116,7 @@
     transition-property: background;
     transition-duration: 1s;
     transition-timing-function: linear;
-    width: 75%;
+    width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
@@ -131,7 +130,6 @@
 .task_button_done {
     background: seagreen;
     border-radius: 6px;
-    cursor: pointer;
     height: 40px;
     line-height: 40px;
     text-align: left;
@@ -140,7 +138,7 @@
     transition-property: background;
     transition-duration: 1s;
     transition-timing-function: linear;
-    width: 75%;
+    width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
@@ -154,7 +152,6 @@
 .task_button_overdue {
     background: orangered;
     border-radius: 6px;
-    cursor: pointer;
     height: 40px;
     line-height: 40px;
     text-align: left;
@@ -163,7 +160,7 @@
     transition-property: background;
     transition-duration: 1s;
     transition-timing-function: linear;
-    width: 75%;
+    width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
@@ -216,7 +213,7 @@
 
 .truncate {
     color: #ffffff;
-    width: 250px;
+    width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -368,4 +365,11 @@
 .centered {
     margin-left: auto;
     margin-right: auto;
+}
+/* --- end --- */
+
+.date-form {
+    text-align: center;
+    margin-left: 40%;
+    margin-right: 50%;
 }

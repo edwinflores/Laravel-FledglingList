@@ -12,14 +12,32 @@
         <div class="container">
             @include('task_form')
         </div>
-        <div class="container">
-            @if(!empty($tasks))
-                @foreach($tasks as $task)
-                    @include('task-element', compact($task))
-                @endforeach
-            @else
-                <h2 class="bg-warning" style="text-align: center">No tasks at the moment~</h2>
-            @endif
-        </div>
+            <div class="container">
+                <div id="flash" style="text-align: center"></div>
+                <ol id="update">
+                @if(!empty($tasks))
+                    @foreach($tasks as $task)
+                        <li style="list-style-type: none;">@include('task-element', compact($task))</li>
+                    @endforeach
+                @else
+                    <h2 id="no-task-header" class="bg-warning" style="text-align: center">No tasks at the moment~</h2>
+                @endif
+                </ol>
+            </div>
     </section>
+
+    <script>
+        $('.delete_button').off().click(function(){
+            var parent = $(this).closest("li");
+            $.ajax({
+                type: "POST",
+                url: "<?php echo url("/delete")?>",
+                data: {id: this.getAttribute("task-id")},
+                cache: false,
+                success: function() {
+                    $(parent).remove();
+                }
+            });
+        });
+    </script>
 @stop

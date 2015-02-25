@@ -10,7 +10,14 @@ class TasksController extends BaseController
 
     public function add_task()
     {
-        return View::make('add_task');
+        $data = Input::all();
+
+        $task = new Task();
+        $task->title = $data['task'];
+        $task->due_date = $data['task_due'];
+        $task->AddTask();
+
+        return View::make('task-element', ["task" => $task]);
     }
 
     public function edit()
@@ -20,6 +27,7 @@ class TasksController extends BaseController
 
     public function delete()
     {
-        return View::make('delete');
+        $data = Input::all();
+        Task::DeleteTask($data['id']);
     }
 }
