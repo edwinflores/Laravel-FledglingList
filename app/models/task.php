@@ -16,7 +16,14 @@ class Task
 //            array($params['user_id'], $params['title'], $params['status'],$params['due_date']));
 
         $this->status = $params['status'];
+    }
 
+    public function UpdateTask(array $data)
+    {
+        DB::table('tasks')
+            ->where('id', $data['id'])
+            ->update(array('title' => $data['task'],
+                'due_date' => date('Y-m-d', strtotime($data['task_due']))));
     }
 
     public static function Get($id)
@@ -36,15 +43,26 @@ class Task
         DB::table('tasks')->where('id', $id)->delete();
     }
 
+    public static function CompleteTask($id)
+    {
+        DB::table('tasks')
+            ->where('id', $id)
+            ->update(['status' => 0]);
+    }
+
     public static function CheckOverdue()
     {
         $tasks = DB::table('tasks')->get();
-        $today = date("Y-m-d");
+        //$today = new DateTime(date("Y-m-d"));
         foreach($tasks as $task) {
-            if ($task->due_date < $today) {
+            if (strtotime($task->due_date) < time()) {
                 DB::table('tasks')
                     ->where('id', $task->id)
                     ->update(array('status' => 2));
+            } else {
+                DB::table('tasks')
+                    ->where('id', $task->id)
+                    ->update(array('status' => 1));
             }
         }
     }

@@ -15,6 +15,7 @@ Route::get('/', array('as' => 'login', 'uses' => 'UsersController@login'));
 Route::post('/form_submit', array('as' => 'form_submit', 'uses' => 'UsersController@form_handler'));
 Route::get('/index', 'TasksController@index');
 Route::post ('/add_task', 'TasksController@add_task');
-Route::get('/edit', 'TasksController@edit');
+Route::post('/edit', 'TasksController@edit');
 Route::post('/delete', 'TasksController@delete');
+Route::post('/complete', 'TasksController@complete');
 Route::get('/logout', array('as' => 'logout', 'uses' => 'UsersController@logout'));

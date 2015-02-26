@@ -17,7 +17,7 @@
                 <ol id="update">
                 @if(!empty($tasks))
                     @foreach($tasks as $task)
-                        <li style="list-style-type: none;">@include('task-element', compact($task))</li>
+                        <li style="list-style-type: none;" id="tsk-element-{{$task->id}}">@include('task-element', compact($task))</li>
                     @endforeach
                 @else
                     <h2 id="no-task-header" class="bg-warning" style="text-align: center">No tasks at the moment~</h2>
@@ -40,4 +40,6 @@
             });
         });
     </script>
+
+
 @stop

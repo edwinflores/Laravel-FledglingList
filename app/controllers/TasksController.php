@@ -22,12 +22,22 @@ class TasksController extends BaseController
 
     public function edit()
     {
-        return View::make('edit');
+        $data = Input::all();
+        $task = new Task();
+        $task->UpdateTask($data);
+        $task = Task::Get($data['id']);
+        return View::make('task-element', ["task" => $task]);
     }
 
     public function delete()
     {
         $data = Input::all();
         Task::DeleteTask($data['id']);
+    }
+
+    public function complete()
+    {
+        $data = Input::all();
+        Task::CompleteTask($data['id']);
     }
 }
