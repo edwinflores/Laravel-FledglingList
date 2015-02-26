@@ -38,6 +38,13 @@ class Task
         return DB::select('SELECT * FROM tasks WHERE user_id = ? ORDER BY status DESC, created_at DESC', [Auth::user()->id]);
     }
 
+    public static function GetAllUnfinished()
+    {
+        self::CheckOverdue();
+        $tasks = DB::table('tasks')->where('status', 1)->orWhere('status', 2)->orderBy('status', 'desc')->get();
+        return $tasks;
+    }
+
     public static function DeleteTask($id)
     {
         DB::table('tasks')->where('id', $id)->delete();
@@ -52,7 +59,7 @@ class Task
 
     public static function CheckOverdue()
     {
-        $tasks = DB::table('tasks')->get();
+        $tasks = DB::table('tasks')->where('status', 1)->orWhere('status', 2)->orderBy('status', 'desc')->get();
         //$today = new DateTime(date("Y-m-d"));
         foreach($tasks as $task) {
             if (strtotime($task->due_date) < time()) {

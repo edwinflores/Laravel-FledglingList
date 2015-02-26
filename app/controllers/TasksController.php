@@ -4,7 +4,7 @@ class TasksController extends BaseController
 {
     public function index()
     {
-        $tasks = Task::GetAll();
+        $tasks = Task::GetAllUnfinished();
         return View::make('index', compact('tasks'));
     }
 
