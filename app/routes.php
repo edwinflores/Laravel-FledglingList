@@ -14,9 +14,9 @@
 Route::get('/', array('as' => 'login', 'uses' => 'UsersController@login'));
 Route::get('/login', 'UsersController@login');
 Route::post('/form_submit', array('as' => 'form_submit', 'uses' => 'UsersController@form_handler'));
-Route::get('/index', array('before' => 'auth', 'TasksController@index'));
-Route::post ('/add_task', array('before' => 'auth', 'TasksController@add_task'));
-Route::post('/edit', array('before' => 'auth', 'TasksController@edit'));
-Route::post('/delete', array('before' => 'auth', 'TasksController@delete'));
-Route::post('/complete', array('before' => 'auth', 'TasksController@complete'));
+Route::get('/index', array('before' => 'auth', 'uses' => 'TasksController@index'));
+Route::post ('/add_task', array('before' => 'auth', 'uses' => 'TasksController@add_task'));
+Route::post('/edit', array('before' => 'auth', 'uses' => 'TasksController@edit'));
+Route::post('/delete', array('before' => 'auth', 'uses' => 'TasksController@delete'));
+Route::post('/complete', array('before' => 'auth', 'uses' => 'TasksController@complete'));
 Route::get('/logout', array('as' => 'logout', 'uses' => 'UsersController@logout'));
