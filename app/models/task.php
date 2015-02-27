@@ -41,7 +41,7 @@ class Task
     public static function GetAllUnfinished()
     {
         self::CheckOverdue();
-        $tasks = DB::table('tasks')->where('status', 1)->orWhere('status', 2)->orderBy('status', 'desc')->get();
+        $tasks = DB::table('tasks')->where('user_id', Auth::user()->id)->where('status', 1)->orWhere('status', 2)->orderBy('status', 'desc')->get();
         return $tasks;
     }
 
